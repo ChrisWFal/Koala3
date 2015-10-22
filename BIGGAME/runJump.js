@@ -1,4 +1,6 @@
-var canvas; 
+//we be chillin
+
+var canvas;
 var ctx; 
 var x = 500; 
 var y = 250; 
