@@ -11,7 +11,7 @@ var characterWidth = 50;
 var characterPosX = 100; 
 var characterPosY = 100;
 var charPosX = 100; 
-var charPosy = 100;
+var charPosY = 100;
 var charSpeed = 5; 
 var character1 = new Image(); 
 character1.src = "images/koalagood.png"; 
@@ -30,11 +30,11 @@ function character(x, y) {
 function clear() {
     ctx.clearRect(0, 0, screenWidth, screenHeight);
 }
-
+//hello
 function draw() {
     clear(); 
     drawBorder();
-    character(x, y);
+    character(charPosX, charPosY);
     if (x + mx > screenWidth - characterWidth || x + mx < 0)
                 mx = -mx;
     if (y + my > screenHeight - characterHeigth || y + my < 0)
