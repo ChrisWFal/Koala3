@@ -1,5 +1,3 @@
-//we be chillin
-
 var canvas;
 var ctx; 
 var x = 500; 
@@ -47,10 +45,10 @@ function draw() {
 
 var jump = function(){
     if(charPosY > jumpLimit && !goingDown){
-        charPosY-=10;
+        charPosY -= 5;
     }else{
         goingDown = true;
-        y+=10;
+        charPosY += 5;
         if(charPosY > jump_y){
             clearInterval(jumping);
             goingDown = false;
