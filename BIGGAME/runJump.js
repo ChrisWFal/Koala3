@@ -10,11 +10,13 @@ var screenWidth = 700;
 var screenHeight = 350;
 var characterHeigth = 50; 
 var characterWidth = 50;
-var characterPosX = 100; 
-var characterPosY = 100;
-var charPosX = 100; 
-var charPosY = 100;
-var charSpeed = 5; 
+var charPosX = 70;
+var charPosY = 250;
+var jumpLimit = 20;
+var charSpeed = 20;
+var jump_y  = charPosY;
+var goingDown = false;
+var jumping;
 var character1 = new Image(); 
 character1.src = "images/koalagood.png"; 
 function drawBorder() {
@@ -43,12 +45,25 @@ function draw() {
                 my = -my;
 }
 
+var jump = function(){
+    if(charPosY > jumpLimit && !goingDown){
+        charPosY-=10;
+    }else{
+        goingDown = true;
+        y+=10;
+        if(charPosY > jump_y){
+            clearInterval(jumping);
+            goingDown = false;
+        }
+    }
+}
+
  function doKeyDown(event)
             {
             switch (event.keyCode) 
                 {
                 case 38:  /* Up arrow was pressed */
-                    charPosY -= charSpeed;
+                    jumping = setInterval(jump, 20)
                     if (charPosY < 0)
                         {
                             charPosY = 0;
