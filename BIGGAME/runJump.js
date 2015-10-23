@@ -12,13 +12,18 @@ var characterHeigth = 50;
 var characterWidth = 50;
 var charPosX = 70;
 var charPosY = 250;
+var platPosX = 100;
+var platPosY = 300;
 var jumpLimit = 20;
 var charSpeed = 20;
 var jump_y  = charPosY;
 var goingDown = false;
 var jumping;
 var character1 = new Image(); 
-character1.src = "images/koalagood.png"; 
+character1.src = "images/koalagood.png";
+var platform = new Image();
+platform.src = "images/platform.png";
+
 function drawBorder() {
     ctx.rect(0, 0, screenWidth, screenHeight); 
     ctx.stroke(); 
@@ -26,6 +31,11 @@ function drawBorder() {
 function character(x, y) {
     ctx.drawImage(character1, x, y); 
 }
+function drawPlatform(px, py){
+    ctx.drawImage(platform, px, py);
+
+}
+
  function init() {
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
@@ -39,6 +49,7 @@ function draw() {
     clear(); 
     drawBorder();
     character(charPosX, charPosY);
+    drawPlatform(platPosX, platPosY);
     if (x + mx > screenWidth - characterWidth || x + mx < 0)
                 mx = -mx;
     if (y + my > screenHeight - characterHeigth || y + my < 0)
