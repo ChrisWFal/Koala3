@@ -1,6 +1,16 @@
 #myCanvas {
     background-image: url("images/lava.jpg");
 z-index: -1;
+    position: relative;
+    left: 600px;
+    top: 80px;
+}
+#background{
+    background: black;
+}
+#mainH1{
+    color: whitesmoke;
+    text-align: center;
 }
 
 
