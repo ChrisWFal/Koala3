@@ -66,7 +66,7 @@ var jump = function(){
         }
     }
 }
-
+//herro
  function doKeyDown(event)
             {
             switch (event.keyCode) 
