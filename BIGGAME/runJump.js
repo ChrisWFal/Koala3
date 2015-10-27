@@ -20,7 +20,7 @@ var jumping;
 var character1 = new Image(); 
 character1.src = "images/koalagood.png";
 var platform = new Image();
-platform.src = "images/platform.png";
+platform.src = "images/platforms.png";
 
 function drawBorder() {
     ctx.rect(0, 0, screenWidth, screenHeight); 
