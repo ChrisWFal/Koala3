@@ -9,10 +9,10 @@ var screenHeight = 350;
 var characterHeigth = 50; 
 var characterWidth = 50;
 var charPosX = 70;
-var charPosY = 250;
+var charPosY = 200;
 var platPosX = 100;
 var platPosY = 300;
-var jumpLimit = 20;
+var jumpLimit = 100;
 var charSpeed = 20;
 var jump_y  = charPosY;
 var goingDown = false;
@@ -56,10 +56,10 @@ function draw() {
 
 var jump = function(){
     if(charPosY > jumpLimit && !goingDown){
-        charPosY -= 5;
+        charPosY -= 10;
     }else{
         goingDown = true;
-        charPosY += 5;
+        charPosY += 10;
         if(charPosY > jump_y){
             clearInterval(jumping);
             goingDown = false;
