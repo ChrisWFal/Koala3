@@ -8,11 +8,11 @@ var screenWidth = 700;
 var screenHeight = 350;
 var characterHeigth = 50; 
 var characterWidth = 50;
-var charPosX = 70;
+var charPosX = 100;
 var charPosY = 200;
 var platWidth = 264;
 var platPosX = 100;
-var platPosY = 285;
+var platPosY = 250;
 var jumpLimit = 100;
 var charSpeed = 20;
 var jump_y  = charPosY;
@@ -54,10 +54,16 @@ function draw() {
     if (y + my > screenHeight - characterHeigth || y + my < 0)
                 my = -my;
 
-    if(charposY + characterHeigth >= platPosY && (charPosX < platPosX) || (charPosX > platPosX + platWidth))
+    if(charPosY + characterHeigth >= platPosY && (charPosX < platPosX || charPosX > platPosX + platWidth))
     {
-
+      ctx.fillText("Game over!", screenHeight/2, screenWidth/2);
+        clearInterval(draw());
     }
+    else
+    {
+        charPosY = platPosY - characterHeigth;
+    }
+
 
 }
 
